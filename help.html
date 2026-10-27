@@ -88,32 +88,31 @@
   </section>
 
   <section class="step" aria-labelledby="s2">
-    <h2 id="s2"><span class="num">2</span> Open it and find your ID</h2>
-    <p>When the Micro Star Help window opens, it shows a number called <b>your ID</b> (6 to 9 digits). Keep that window open. You will type the number in the next step.</p>
+    <h2 id="s2"><span class="num">2</span> Open it and find your code</h2>
+    <p>When the Micro Star Help window opens, it shows a number called <b>your code</b> (6 to 9 digits). Keep that window open. You will type the number in the next step.</p>
   </section>
 
   <section class="step" aria-labelledby="s3">
-    <h2 id="s3"><span class="num">3</span> Tell us who you are</h2>
+    <h2 id="s3"><span class="num">3</span> Ask for help</h2>
     <form id="f" novalidate>
+      <fieldset>
+        <legend>What do you need help with?</legend>
+        <div class="radios" style="flex-direction:column;align-items:stretch">
+          <label><input type="radio" name="topic" value="Set up my store"> Set up my store</label>
+          <label><input type="radio" name="topic" value="Learn how to use it"> Learn how to use it</label>
+          <label><input type="radio" name="topic" value="Something is wrong"> Something is wrong</label>
+        </div>
+      </fieldset>
+      <label for="rd">Code shown in the Micro Star Help window</label>
+      <input id="rd" name="rd" type="text" inputmode="numeric" autocomplete="off" maxlength="16" placeholder="Example: 123 456 789" required>
+      <label for="phone">Call back number</label>
+      <input id="phone" name="phone" type="tel" autocomplete="tel" maxlength="30" required>
       <label for="name">Your name</label>
       <input id="name" name="name" type="text" autocomplete="name" maxlength="80" required>
       <label for="email">Email</label>
       <input id="email" name="email" type="email" autocomplete="email" maxlength="120" required>
-      <label for="phone">Phone <small>(optional, so we can call you)</small></label>
-      <input id="phone" name="phone" type="tel" autocomplete="tel" maxlength="30">
-      <label for="biz">Business name <small>(optional)</small></label>
-      <input id="biz" name="biz" type="text" maxlength="120">
-      <fieldset>
-        <legend>Your computer</legend>
-        <div class="radios">
-          <label><input type="radio" name="computer" value="windows"> Windows</label>
-          <label><input type="radio" name="computer" value="mac"> Mac</label>
-        </div>
-      </fieldset>
-      <label for="rd">The ID shown in the Micro Star Help window</label>
-      <input id="rd" name="rd" type="text" inputmode="numeric" autocomplete="off" maxlength="16" placeholder="Example: 123 456 789" required>
-      <label for="what">What do you need help with?</label>
-      <textarea id="what" name="what" maxlength="500" required placeholder="Example: Help me set up my store and my lottery games."></textarea>
+      <label for="what">Note <small>(optional)</small></label>
+      <textarea id="what" name="what" maxlength="400" placeholder="Anything we should know."></textarea>
       <div class="trap" aria-hidden="true"><label for="hp">Leave this empty</label><input id="hp" name="hp" type="text" tabindex="-1" autocomplete="off"></div>
       <div style="margin-top:22px"><button class="btn copper" id="send" type="submit">Ask for help</button></div>
       <div id="bad" class="msg bad" role="alert"></div>
@@ -134,15 +133,17 @@
   f.addEventListener("submit", function (e) {
     e.preventDefault();
     var v = function (n) { return (f.elements[n].value || "").trim(); };
-    var comp = f.elements.computer.value;
+    var topic = f.elements.topic.value;
+    var comp = /Mac|iPhone|iPad/.test(navigator.userAgent) ? "mac" : "windows";   // the helper is told which kind of computer
+    if (!topic) return show(bad, "Check:", "Please pick what you need help with.");
+    if (!/^\d{6,12}$/.test(v("rd").replace(/[\s-]/g, ""))) return show(bad, "Check:", "Please type the code shown in the Micro Star Help window (digits only)."), f.elements.rd.focus();
+    if (!/^[0-9 +().-]{7,30}$/.test(v("phone"))) return show(bad, "Check:", "Please type a call back number (digits only)."), f.elements.phone.focus();
     if (!v("name")) return show(bad, "Check:", "Please type your name."), f.elements.name.focus();
     if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v("email"))) return show(bad, "Check:", "Please type a correct email address."), f.elements.email.focus();
-    if (!comp) return show(bad, "Check:", "Please pick Windows or Mac.");
-    if (!/^\d{6,12}$/.test(v("rd").replace(/[\s-]/g, ""))) return show(bad, "Check:", "Please type the ID number shown in the Micro Star Help window (digits only)."), f.elements.rd.focus();
-    if (v("what").length < 3) return show(bad, "Check:", "Please tell us in a few words what you need."), f.elements.what.focus();
+    var what = topic + (v("what") ? " - " + v("what") : "");
     send.disabled = true; send.textContent = "Sending…";
     fetch(URL_, { method: "POST", headers: { "Content-Type": "application/json", apikey: KEY, Authorization: "Bearer " + KEY },
-      body: JSON.stringify({ p_name: v("name"), p_email: v("email"), p_phone: v("phone") || null, p_business: v("biz") || null, p_what: v("what"), p_computer: comp, p_rd_id: v("rd"), p_lang: "en", p_hp: v("hp") }) })
+      body: JSON.stringify({ p_name: v("name"), p_email: v("email"), p_phone: v("phone"), p_business: null, p_what: what, p_computer: comp, p_rd_id: v("rd"), p_lang: "en", p_hp: v("hp") }) })
       .then(function (r) { return r.json().catch(function () { return {}; }).then(function (j) { return { ok: r.ok, j: j }; }); })
       .then(function (x) {
         send.disabled = false; send.textContent = "Ask for help";
