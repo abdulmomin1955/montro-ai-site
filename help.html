@@ -79,17 +79,17 @@
     <h2 id="s1"><span class="num">1</span> Download the help program</h2>
     <p>Pick the kind of computer you are using now.</p>
     <div class="dl">
-      <a class="btn" href="downloads/MicroStarHelp-Windows.exe" download>Windows computer</a>
-      <a class="btn" href="downloads/MicroStarHelp-Mac-AppleChip.dmg" download>Mac (Apple chip: M1, M2, M3…)</a>
-      <a class="btn" href="downloads/MicroStarHelp-Mac-Intel.dmg" download>Mac (Intel)</a>
+      <a class="btn" href="downloads/MontroAIHelp-Windows.exe" download>Windows computer</a>
+      <a class="btn" href="downloads/MontroAIHelp-Mac-AppleChip.dmg" download>Mac (Apple chip: M1, M2, M3…)</a>
+      <a class="btn" href="downloads/MontroAIHelp-Mac-Intel.dmg" download>Mac (Intel)</a>
     </div>
     <p class="note">Not sure which Mac you have? Click the Apple logo, then About This Mac, and look at “Chip”. If your computer asks whether to open a program from the internet, choose Open (Mac) or Run (Windows).</p>
-    <p class="note"><b>Mac only:</b> the first time, your Mac asks you to allow “Accessibility” for MicroStarHelp. Click <b>Configure</b>, switch it on, and come back. You only do this once. Our helper can walk you through it on the phone: 832-526-0617. Windows computers do not need this.</p>
+    <p class="note"><b>Mac only:</b> the first time, your Mac asks you to allow “Accessibility” for Montro-AI-Help. Click <b>Configure</b>, switch it on, and come back. You only do this once. Our helper can walk you through it on the phone: 832-526-0617. Windows computers do not need this.</p>
   </section>
 
   <section class="step" aria-labelledby="s2">
     <h2 id="s2"><span class="num">2</span> Open it and find your code</h2>
-    <p>When the Micro Star Help window opens, it shows a number called <b>your code</b> (6 to 9 digits). Keep that window open. You will type the number in the next step.</p>
+    <p>When the Montro-AI Help window opens, it shows a number called <b>your code</b> (6 to 9 digits). Keep that window open. You will type the number in the next step.</p>
   </section>
 
   <section class="step" aria-labelledby="s3">
@@ -103,7 +103,7 @@
           <label><input type="radio" name="topic" value="Something is wrong"> Something is wrong</label>
         </div>
       </fieldset>
-      <label for="rd">Code shown in the Micro Star Help window</label>
+      <label for="rd">Code shown in the Montro-AI Help window</label>
       <input id="rd" name="rd" type="text" inputmode="numeric" autocomplete="off" maxlength="16" placeholder="Example: 123 456 789" required>
       <label for="phone">Call back number</label>
       <input id="phone" name="phone" type="tel" autocomplete="tel" maxlength="30" required>
@@ -135,7 +135,7 @@
     var topic = f.elements.topic.value;
     var comp = /Mac|iPhone|iPad/.test(navigator.userAgent) ? "mac" : "windows";   // the helper is told which kind of computer
     if (!topic) return show(bad, "Check:", "Please pick what you need help with.");
-    if (!/^\d{6,12}$/.test(v("rd").replace(/[\s-]/g, ""))) return show(bad, "Check:", "Please type the code shown in the Micro Star Help window (digits only)."), f.elements.rd.focus();
+    if (!/^\d{6,12}$/.test(v("rd").replace(/[\s-]/g, ""))) return show(bad, "Check:", "Please type the code shown in the Montro-AI Help window (digits only)."), f.elements.rd.focus();
     if (!/^[0-9 +().-]{7,30}$/.test(v("phone"))) return show(bad, "Check:", "Please type a call back number (digits only)."), f.elements.phone.focus();
     if (!v("name")) return show(bad, "Check:", "Please type your name."), f.elements.name.focus();
     if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v("email"))) return show(bad, "Check:", "Please type a correct email address."), f.elements.email.focus();
@@ -146,7 +146,7 @@
       .then(function (r) { return r.json().catch(function () { return {}; }).then(function (j) { return { ok: r.ok, j: j }; }); })
       .then(function (x) {
         send.disabled = false; send.textContent = "Ask for help";
-        if (x.ok) { show(good, "Sent.", " A helper will connect soon. Keep the Micro Star Help window open. When a box asks you to Accept, click Accept. You can also call 832-526-0617."); f.reset(); return; }
+        if (x.ok) { show(good, "Sent.", " A helper will connect soon. Keep the Montro-AI Help window open. When a box asks you to Accept, click Accept. You can also call 832-526-0617."); f.reset(); return; }
         show(bad, "Not sent.", " " + ((x.j && x.j.message) || "Something went wrong.") + " What you typed is still here.");
       })
       .catch(function () { send.disabled = false; send.textContent = "Ask for help"; show(bad, "Not sent.", " Check your internet, then try again. What you typed is still here. Or call 832-526-0617."); });
