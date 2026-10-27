@@ -6,39 +6,39 @@
 <title>Get Remote Help — Montro</title>
 <meta name="description" content="Ask a Montro helper to set up your accounts with you. You stay in control: you click Accept, you can stop any time, nothing is recorded.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=DM+Sans:wght@400;500;600;700&display=swap">
 <style>
-  :root { --ink:#14233A; --cream:#F7F4EC; --copper:#C6763B; --copper-d:#9A4F1F; --sand:#EADFCB; --line:#E8E2D2; }
+  :root { --ink:#12241C; --cream:#F5F6F3; --copper:#1A5C45; --copper-d:#1A5C45; --sand:#E4EFE9; --line:#E3E7E1; }
   * { box-sizing:border-box; }
-  body { margin:0; background:var(--cream); color:#1B1F27; font-family:'IBM Plex Sans',system-ui,sans-serif; font-size:17px; line-height:1.55; }
+  body { margin:0; background:var(--cream); color:#12241C; font-family:'DM Sans',system-ui,sans-serif; font-size:17px; line-height:1.55; }
   a { color:inherit; }
-  h1,h2,h3 { font-family:'Fraunces',serif; color:var(--ink); font-weight:500; }
+  h1,h2,h3 { font-family:'Bricolage Grotesque',sans-serif; color:var(--ink); font-weight:500; }
   .nav { display:flex; align-items:center; justify-content:space-between; padding:18px 64px; background:var(--ink); color:var(--cream); }
   .logo { display:flex; align-items:center; gap:12px; text-decoration:none; }
-  .logo-mark { width:30px; height:30px; border-radius:7px; background:var(--copper); display:flex; align-items:center; justify-content:center; font-family:'Fraunces',serif; font-weight:600; font-size:17px; color:var(--ink); }
-  .logo-name { font-family:'Fraunces',serif; font-weight:600; font-size:21px; }
+  .logo-mark { width:30px; height:30px; border-radius:8px 8px 8px 2px; background:#F5B94A; display:flex; align-items:center; justify-content:center; font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:17px; color:#12241C; }
+  .logo-name { font-family:'Bricolage Grotesque',sans-serif; font-weight:600; font-size:21px; }
   .nav a.back { font-size:15px; font-weight:500; text-decoration:none; }
   main { max-width:900px; margin:0 auto; padding:56px 24px 80px; }
   h1 { font-size:42px; line-height:1.1; margin:0 0 14px; }
-  .lead { font-size:19px; color:#4A5262; margin:0 0 28px; }
+  .lead { font-size:19px; color:#55625B; margin:0 0 28px; }
   .promise { background:#fff; border:2px solid var(--ink); border-radius:14px; padding:22px 26px; margin:0 0 40px; }
   .promise h2 { margin:0 0 10px; font-size:22px; }
   .promise ul { margin:0; padding-left:22px; }
   .promise li { margin:6px 0; }
-  .step { background:#fff; border:1.5px solid #EDE7D8; border-radius:14px; padding:24px 26px; margin:0 0 20px; }
+  .step { background:#fff; border:1.5px solid #E3E7E1; border-radius:14px; padding:24px 26px; margin:0 0 20px; }
   .step h2 { margin:0 0 10px; font-size:24px; display:flex; gap:14px; align-items:center; }
-  .num { flex:none; width:38px; height:38px; border-radius:50%; background:var(--ink); color:var(--cream); display:flex; align-items:center; justify-content:center; font-family:'IBM Plex Sans',sans-serif; font-size:18px; font-weight:700; }
+  .num { flex:none; width:38px; height:38px; border-radius:50%; background:var(--ink); color:var(--cream); display:flex; align-items:center; justify-content:center; font-family:'DM Sans',sans-serif; font-size:18px; font-weight:700; }
   .dl { display:flex; flex-wrap:wrap; gap:12px; margin:14px 0 4px; }
-  .btn { display:inline-block; background:var(--ink); color:#fff; padding:15px 24px; border-radius:10px; font-size:17px; font-weight:600; border:none; cursor:pointer; font-family:inherit; text-decoration:none; min-height:48px; }
-  .btn:hover { background:#0c1829; }
+  .btn { display:inline-block; background:var(--ink); color:#fff; padding:15px 24px; border-radius:999px; font-size:17px; font-weight:600; border:none; cursor:pointer; font-family:inherit; text-decoration:none; min-height:48px; }
+  .btn:hover { background:#1D3A2D; }
   .btn.copper { background:var(--copper-d); }
-  .btn.copper:hover { background:#7f3f16; }
+  .btn.copper:hover { background:#134A38; }
   .btn[disabled] { opacity:.6; cursor:wait; }
   .note { font-size:15px; color:#5B6472; margin:10px 0 0; }
   label { display:block; font-weight:600; margin:18px 0 6px; }
   label small { font-weight:400; color:#5B6472; }
   input[type=text], input[type=email], input[type=tel], textarea { width:100%; font:inherit; padding:13px 14px; border:1.5px solid #B9B09A; border-radius:9px; background:#fff; color:#1B1F27; min-height:48px; }
-  input:focus, textarea:focus, .btn:focus-visible, a:focus-visible { outline:3px solid var(--copper); outline-offset:2px; }
+  input:focus, textarea:focus, .btn:focus-visible, a:focus-visible { outline:3px solid #F5B94A; outline-offset:2px; }
   textarea { min-height:110px; resize:vertical; }
   fieldset { border:0; padding:0; margin:18px 0 0; }
   legend { font-weight:600; padding:0; margin-bottom:6px; }
@@ -51,8 +51,8 @@
   .msg.bad { background:#FDECEC; border:2px solid #B3261E; color:#7A1812; }
   .msg.good { background:#E7F4EA; border:2px solid #1E6B34; color:#14391f; }
   .msg b.tag { text-transform:uppercase; letter-spacing:.4px; margin-right:6px; }
-  .small-help { margin-top:36px; font-size:16px; color:#4A5262; }
-  footer { background:var(--ink); color:#93A0B4; padding:28px 64px; font-size:13.5px; }
+  .small-help { margin-top:36px; font-size:16px; color:#55625B; }
+  footer { background:var(--ink); color:#A9B8B0; padding:28px 64px; font-size:13.5px; }
   @media (max-width:700px) { .nav { padding:14px 20px; } h1 { font-size:32px; } main { padding:36px 18px 60px; } footer { padding:24px 20px; } }
 </style>
 </head>
