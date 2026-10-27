@@ -4,17 +4,17 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Montro — Product Demo</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=DM+Sans:wght@400;500;600;700&display=swap">
 <style>
   :root {
-    --ink: #14233A;
-    --ink-2: #1B2C48;
-    --cream: #F7F4EC;
+    --ink: #12241C;
+    --ink-2: #1D3A2D;
+    --cream: #F5F6F3;
     --paper: #FFFFFF;
-    --line: #E8E2D2;
-    --copper: #C6763B;
-    --copper-dark: #B2652F;
-    --text: #1B1F27;
+    --line: #E3E7E1;
+    --copper: #1A5C45;
+    --copper-dark: #134A38;
+    --text: #12241C;
     --muted: #6B7280;
     --green: #2E7D4F;
     --red: #B2472B;
@@ -24,13 +24,13 @@
   * { box-sizing: border-box; }
   html, body { height: 100%; margin: 0; }
   body {
-    font-family: 'IBM Plex Sans', system-ui, sans-serif;
+    font-family: 'DM Sans', system-ui, sans-serif;
     background: var(--cream);
     color: var(--text);
     display: flex;
     overflow-x: hidden;
   }
-  .display { font-family: 'Fraunces', serif; }
+  .display { font-family: 'Bricolage Grotesque', sans-serif; }
 
   /* Sidebar */
   #sidebar {
@@ -45,7 +45,7 @@
     min-height: 100vh;
   }
   .brand { display: flex; align-items: center; gap: 10px; padding: 8px 10px 22px 10px; }
-  .brand-mark { width: 26px; height: 26px; border-radius: 6px; background: var(--copper); display: flex; align-items: center; justify-content: center; font-weight: 600; color: var(--ink); flex-shrink: 0; }
+  .brand-mark { width: 26px; height: 26px; border-radius: 8px 8px 8px 2px; background: #F5B94A; display: flex; align-items: center; justify-content: center; font-weight: 600; color: var(--ink); flex-shrink: 0; }
   .brand-name { font-size: 17px; font-weight: 600; }
   .navbtn {
     display: flex; align-items: center; gap: 12px;
@@ -54,7 +54,7 @@
     width: 100%; font-family: inherit;
   }
   .navbtn:hover { background: rgba(255,255,255,0.06); color: #fff; }
-  .navbtn.active { background: rgba(198,118,59,0.18); color: #fff; }
+  .navbtn.active { background: rgba(245,185,74,0.22); color: #fff; }
   .navbtn svg { flex-shrink: 0; }
   .store-picker {
     margin-top: auto; padding: 12px; border-radius: 10px; background: rgba(255,255,255,0.06);
@@ -83,22 +83,22 @@
   @media (max-width: 900px) { .cols-4, .cols-3, .cols-2 { grid-template-columns: 1fr; } }
 
   .stat-label { font-size: 12.5px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.4px; color: var(--muted); }
-  .stat-value { font-family: 'Fraunces', serif; font-size: 27px; margin-top: 8px; }
+  .stat-value { font-family: 'Bricolage Grotesque', sans-serif; font-size: 27px; margin-top: 8px; }
   .stat-delta { font-size: 12.5px; margin-top: 6px; font-weight: 600; }
   .up { color: var(--green); } .down { color: var(--red); }
 
   table { width: 100%; border-collapse: collapse; font-size: 14px; }
   th { text-align: left; font-size: 12px; text-transform: uppercase; letter-spacing: 0.4px; color: var(--muted); padding: 9px 10px; border-bottom: 1px solid var(--line); }
-  td { padding: 11px 10px; border-bottom: 1px solid #F1EDE3; }
+  td { padding: 11px 10px; border-bottom: 1px solid #EEF1EC; }
   tr:last-child td { border-bottom: none; }
   .tag { font-size: 11.5px; font-weight: 600; padding: 3px 9px; border-radius: 999px; }
   .tag.ok { background: #EAF5EE; color: var(--green); }
   .tag.low { background: #FDECE7; color: var(--red); }
-  .tag.mid { background: #FDF3E2; color: #97650E; }
+  .tag.mid { background: #FBEFD2; color: #97650E; }
 
-  button.primary { background: var(--copper); color: #fff; border: none; padding: 10px 18px; border-radius: 8px; font-weight: 600; font-size: 14px; cursor: pointer; font-family: inherit; }
+  button.primary { background: var(--copper); color: #fff; border: none; padding: 10px 18px; border-radius: 999px; font-weight: 600; font-size: 14px; cursor: pointer; font-family: inherit; }
   button.primary:hover { background: var(--copper-dark); }
-  button.ghost { background: transparent; border: 1.5px solid var(--line); color: var(--text); padding: 9px 16px; border-radius: 8px; font-weight: 600; font-size: 14px; cursor: pointer; font-family: inherit; }
+  button.ghost { background: transparent; border: 1.5px solid var(--line); color: var(--text); padding: 9px 16px; border-radius: 999px; font-weight: 600; font-size: 14px; cursor: pointer; font-family: inherit; }
   button.ghost:hover { border-color: var(--copper); }
   input[type=text], input[type=search] { padding: 9px 12px; border: 1.5px solid var(--line); border-radius: 8px; font-size: 14px; font-family: inherit; width: 100%; }
   input:focus, select:focus { outline: 2px solid var(--copper); outline-offset: 1px; }
@@ -115,10 +115,10 @@
   .item-btn:hover { border-color: var(--copper); }
   .item-name { font-size: 13.5px; font-weight: 600; }
   .item-price { font-size: 13px; color: var(--muted); }
-  .cart-row { display: flex; justify-content: space-between; align-items: center; padding: 9px 0; border-bottom: 1px solid #F1EDE3; font-size: 14px; }
+  .cart-row { display: flex; justify-content: space-between; align-items: center; padding: 9px 0; border-bottom: 1px solid #EEF1EC; font-size: 14px; }
   .qtybtn { width: 22px; height: 22px; border-radius: 5px; border: 1px solid var(--line); background: #fff; cursor: pointer; font-size: 14px; line-height: 1; }
 
-  .barwrap { height: 8px; border-radius: 999px; background: #F1EDE3; overflow: hidden; flex: 1; }
+  .barwrap { height: 8px; border-radius: 999px; background: #EEF1EC; overflow: hidden; flex: 1; }
   .bar { height: 100%; background: var(--copper); }
 
   .bell { position: relative; }
@@ -169,7 +169,7 @@
     <h1 id="pageTitle" class="display">Dashboard</h1>
     <div style="display:flex; align-items:center; gap: 14px;">
       <span class="pill">● All systems live</span>
-      <div style="width:32px;height:32px;border-radius:50%;background:#EADFCB;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:#7A5A2E;">JM</div>
+      <div style="width:32px;height:32px;border-radius:50%;background:#E4EFE9;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:#1A5C45;">JM</div>
     </div>
   </div>
   <div id="content"></div>
@@ -273,7 +273,7 @@
         '<div class="card">' +
           '<h2 class="section">Needs attention</h2>' +
           (lowStock.length ? lowStock.map(function (i) {
-            return '<div style="display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-bottom:1px solid #F1EDE3;font-size:14px;">' +
+            return '<div style="display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-bottom:1px solid #EEF1EC;font-size:14px;">' +
               '<div>' + esc(i.name) + '<div class="muted" style="font-size:12px;">' + esc(i.cat) + '</div></div>' +
               '<span class="tag low">Reorder</span></div>';
           }).join("") : '<div class="muted" style="font-size:14px;">Nothing needs attention right now.</div>') +
@@ -434,7 +434,7 @@
           '<div style="display:flex;gap:6px;align-items:flex-end;height:90px;margin-top:12px;">' +
             [26,28,27,24,29,30,28].map(function (v) {
               var h = Math.round((v / 32) * 100);
-              return '<div style="flex:1;height:100%;display:flex;align-items:flex-end;"><div style="width:100%;height:' + h + '%;background:#EADFCB;border-radius:3px 3px 0 0;"></div></div>';
+              return '<div style="flex:1;height:100%;display:flex;align-items:flex-end;"><div style="width:100%;height:' + h + '%;background:#E4EFE9;border-radius:3px 3px 0 0;"></div></div>';
             }).join("") +
           '</div>' +
         '</div>' +
