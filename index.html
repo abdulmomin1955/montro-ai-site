@@ -35,6 +35,9 @@
   .btn.ghost { background:transparent; color:var(--ink); border:1.5px solid #CBD2CB; }
   .btn.ghost:hover { background:#fff; border-color:var(--green); }
   .nav-right { display:flex; align-items:center; gap:10px; }
+  .nav a, .nav-right a { white-space:nowrap; }
+  @media (max-width:1180px) { .nav { padding:14px 24px; } .links { gap:16px; } .logo-name { font-size:22px; } .loginlink { padding:8px 8px; } }
+  @media (max-width:1020px) { .links { display:none; } }
   .loginlink { font-weight:600; font-size:15px; color:var(--ink); text-decoration:none; padding:10px 14px; border-radius:999px; }
   .loginlink:hover { background:var(--mint); }
   .loginlink:focus-visible { outline:3px solid var(--gold); outline-offset:2px; }
