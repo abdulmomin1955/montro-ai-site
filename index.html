@@ -3,7 +3,6 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20200%20200%22%3E%3Cpath%20d%3D%22M44%208H156A36%2036%200%200%201%20192%2044V116A76%2076%200%200%201%20116%20192H44A36%2036%200%200%201%208%20156V44A36%2036%200%200%201%2044%208Z%22%20fill%3D%22%231A5C45%22%2F%3E%3Cg%20fill%3D%22none%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M52%20168L102%2050L141%20172%22%20stroke%3D%22%239BE8C6%22%20stroke-width%3D%227.5%22%2F%3E%3Cpath%20d%3D%22M72%2080L93%20112%22%20stroke%3D%22%231A5C45%22%20stroke-width%3D%2221%22%20stroke-linecap%3D%22butt%22%2F%3E%3Cpath%20d%3D%22M52%2052V168%22%20stroke%3D%22%23F5F6F3%22%20stroke-width%3D%2212.5%22%2F%3E%3Cpath%20d%3D%22M54%2052L102%20128L117%20110%22%20stroke%3D%22%23F5F6F3%22%20stroke-width%3D%2212.5%22%2F%3E%3Cpath%20d%3D%22M141%2062V172%22%20stroke%3D%22%23F5F6F3%22%20stroke-width%3D%2212.5%22%2F%3E%3Cpath%20d%3D%22M137%2060L120%2091%22%20stroke%3D%22%23F5F6F3%22%20stroke-width%3D%2212.5%22%2F%3E%3Cpath%20d%3D%22M113%2084L123%20115%22%20stroke%3D%22%231A5C45%22%20stroke-width%3D%2212.5%22%20stroke-linecap%3D%22butt%22%2F%3E%3Cpath%20d%3D%22M109%2068L130%20130%22%20stroke%3D%22%239BE8C6%22%20stroke-width%3D%227.5%22%20stroke-linecap%3D%22butt%22%2F%3E%3C%2Fg%3E%3Ccircle%20cx%3D%22147%22%20cy%3D%2242%22%20r%3D%2210%22%20fill%3D%22%23F5B94A%22%2F%3E%3C%2Fsvg%3E">
 <title>MontroAI — Retail &amp; Restaurant Operations Platform</title>
 <meta name="description" content="MontroAI pairs point of sale with real-time insights, inventory, loyalty and multi-location control for convenience stores, grocery, liquor, smoke shops, cafes and restaurants.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,10 +21,6 @@
   .logo { display:flex; align-items:center; gap:10px; }
   .logo-mark { position:relative; width:34px; height:34px; border-radius:10px 10px 10px 3px; background:var(--green); display:flex; align-items:center; justify-content:center; font-family:'Bricolage Grotesque',sans-serif; font-weight:800; font-size:18px; color:#fff; }
   .logo-mark::after { content:""; position:absolute; top:5px; right:5px; width:7px; height:7px; border-radius:50%; background:var(--gold); }
-  svg.logo-mark { width:40px; height:40px; background:none; border-radius:0; display:block; }
-  svg.logo-mark::after { display:none; }
-  .foot svg.logo-mark { background:none; }
-  .brandline svg.bl { width:26px; height:26px; }
   .logo-name { font-family:'Bricolage Grotesque',sans-serif; font-weight:800; font-size:26px; letter-spacing:-.02em; color:var(--green); }
   .links { display:flex; gap:34px; font-size:16px; font-weight:500; }
   .links a:hover { color:var(--green); }
@@ -141,7 +136,7 @@
 <body>
 
 <div class="nav">
-  <a class="logo" href="#top"><svg class="logo-mark" viewBox="0 0 200 200" aria-hidden="true" focusable="false"><path d="M44 8H156A36 36 0 0 1 192 44V116A76 76 0 0 1 116 192H44A36 36 0 0 1 8 156V44A36 36 0 0 1 44 8Z" fill="#1A5C45"/><g fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M52 168L102 50L141 172" stroke="#9BE8C6" stroke-width="7.5"/><path d="M72 80L93 112" stroke="#1A5C45" stroke-width="21" stroke-linecap="butt"/><path d="M52 52V168" stroke="#F5F6F3" stroke-width="12.5"/><path d="M54 52L102 128L117 110" stroke="#F5F6F3" stroke-width="12.5"/><path d="M141 62V172" stroke="#F5F6F3" stroke-width="12.5"/><path d="M137 60L120 91" stroke="#F5F6F3" stroke-width="12.5"/><path d="M113 84L123 115" stroke="#1A5C45" stroke-width="12.5" stroke-linecap="butt"/><path d="M109 68L130 130" stroke="#9BE8C6" stroke-width="7.5" stroke-linecap="butt"/></g><circle cx="147" cy="42" r="10" fill="#F5B94A"/></svg><div class="logo-name">MontroAI</div></a>
+  <a class="logo" href="#top"><div class="logo-mark">M</div><div class="logo-name">MontroAI</div></a>
   <div class="links">
     <a href="#platform">Platform</a><a href="#why">Why MontroAI</a><a href="#retail">Retail</a><a href="#restaurant">Restaurant</a><a href="demo.html">Live demo</a>
   </div>
@@ -168,7 +163,7 @@
     <div class="phone">
       <div class="screen">
         <div class="urlbar">montroai.net/app</div>
-        <div class="brandline"><svg class="bl" viewBox="0 0 200 200" aria-hidden="true" focusable="false"><path d="M44 8H156A36 36 0 0 1 192 44V116A76 76 0 0 1 116 192H44A36 36 0 0 1 8 156V44A36 36 0 0 1 44 8Z" fill="#1A5C45"/><g fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M52 168L102 50L141 172" stroke="#9BE8C6" stroke-width="7.5"/><path d="M72 80L93 112" stroke="#1A5C45" stroke-width="21" stroke-linecap="butt"/><path d="M52 52V168" stroke="#F5F6F3" stroke-width="12.5"/><path d="M54 52L102 128L117 110" stroke="#F5F6F3" stroke-width="12.5"/><path d="M141 62V172" stroke="#F5F6F3" stroke-width="12.5"/><path d="M137 60L120 91" stroke="#F5F6F3" stroke-width="12.5"/><path d="M113 84L123 115" stroke="#1A5C45" stroke-width="12.5" stroke-linecap="butt"/><path d="M109 68L130 130" stroke="#9BE8C6" stroke-width="7.5" stroke-linecap="butt"/></g><circle cx="147" cy="42" r="10" fill="#F5B94A"/></svg>MontroAI</div>
+        <div class="brandline"><i></i>MontroAI</div>
         <div class="pcard">
           <span class="chip">3 locations · live</span>
           <div class="big">$8,412</div>
@@ -248,7 +243,7 @@
 <footer>
   <div class="foot">
     <div>
-      <div class="logo"><svg class="logo-mark" viewBox="0 0 200 200" aria-hidden="true" focusable="false"><path d="M44 8H156A36 36 0 0 1 192 44V116A76 76 0 0 1 116 192H44A36 36 0 0 1 8 156V44A36 36 0 0 1 44 8Z" fill="#1A5C45"/><g fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M52 168L102 50L141 172" stroke="#9BE8C6" stroke-width="7.5"/><path d="M72 80L93 112" stroke="#1A5C45" stroke-width="21" stroke-linecap="butt"/><path d="M52 52V168" stroke="#F5F6F3" stroke-width="12.5"/><path d="M54 52L102 128L117 110" stroke="#F5F6F3" stroke-width="12.5"/><path d="M141 62V172" stroke="#F5F6F3" stroke-width="12.5"/><path d="M137 60L120 91" stroke="#F5F6F3" stroke-width="12.5"/><path d="M113 84L123 115" stroke="#1A5C45" stroke-width="12.5" stroke-linecap="butt"/><path d="M109 68L130 130" stroke="#9BE8C6" stroke-width="7.5" stroke-linecap="butt"/></g><circle cx="147" cy="42" r="10" fill="#F5B94A"/></svg><div class="logo-name">MontroAI</div></div>
+      <div class="logo"><div class="logo-mark">M</div><div class="logo-name">MontroAI</div></div>
       <p>One back office for the counter, the kitchen and every location in between.</p>
     </div>
     <div class="col"><b>Product</b><a href="#platform">Point of Sale</a><a href="#platform">Insights</a><a href="#platform">Inventory</a><a href="#platform">Loyalty</a></div>
