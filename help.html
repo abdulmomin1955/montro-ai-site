@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Get Remote Help — Montro-AI</title>
-<meta name="description" content="Ask a Montro-AI helper to set up your accounts with you. You stay in control: you click Accept, you can stop any time, nothing is recorded.">
+<title>Get Remote Help — MontroAI</title>
+<meta name="description" content="Ask a MontroAI helper to set up your accounts with you. You stay in control: you click Accept, you can stop any time, nothing is recorded.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=DM+Sans:wght@400;500;600;700&display=swap">
 <style>
@@ -58,7 +58,7 @@
 </head>
 <body>
 <div class="nav">
-  <a class="logo" href="index.html"><div class="logo-mark">M</div><div class="logo-name">Montro-AI</div></a>
+  <a class="logo" href="index.html"><div class="logo-mark">M</div><div class="logo-name">MontroAI</div></a>
   <a class="back" href="index.html">← Back to the website</a>
 </div>
 <main id="top">
@@ -84,12 +84,12 @@
       <a class="btn" href="downloads/MontroAIHelp-Mac-Intel.dmg" download>Mac (Intel)</a>
     </div>
     <p class="note">Not sure which Mac you have? Click the Apple logo, then About This Mac, and look at “Chip”. If your computer asks whether to open a program from the internet, choose Open (Mac) or Run (Windows).</p>
-    <p class="note"><b>Mac only:</b> the first time, your Mac asks you to allow “Accessibility” for Montro-AI-Help. Click <b>Configure</b>, switch it on, and come back. You only do this once. Our helper can walk you through it on the phone: 832-526-0617. Windows computers do not need this.</p>
+    <p class="note"><b>Mac only:</b> the first time, your Mac asks you to allow “Accessibility” for MontroAI-Help. Click <b>Configure</b>, switch it on, and come back. You only do this once. Our helper can walk you through it on the phone: 832-526-0617. Windows computers do not need this.</p>
   </section>
 
   <section class="step" aria-labelledby="s2">
     <h2 id="s2"><span class="num">2</span> Open it and find your code</h2>
-    <p>When the Montro-AI Help window opens, it shows a number called <b>your code</b> (6 to 9 digits). Keep that window open. You will type the number in the next step.</p>
+    <p>When the MontroAI Help window opens, it shows a number called <b>your code</b> (6 to 9 digits). Keep that window open. You will type the number in the next step.</p>
   </section>
 
   <section class="step" aria-labelledby="s3">
@@ -103,7 +103,7 @@
           <label><input type="radio" name="topic" value="Something is wrong"> Something is wrong</label>
         </div>
       </fieldset>
-      <label for="rd">Code shown in the Montro-AI Help window</label>
+      <label for="rd">Code shown in the MontroAI Help window</label>
       <input id="rd" name="rd" type="text" inputmode="numeric" autocomplete="off" maxlength="16" placeholder="Example: 123 456 789" required>
       <label for="phone">Call back number</label>
       <input id="phone" name="phone" type="tel" autocomplete="tel" maxlength="30" required>
@@ -121,7 +121,7 @@
   </section>
 
 </main>
-<footer>Montro-AI is a product of ARAZ Venture LLC, a Texas company. © 2026 ARAZ Venture LLC. &nbsp;·&nbsp; <a href="privacy.html">Privacy Policy</a> &nbsp;·&nbsp; <a href="terms.html">Terms of Service</a> &nbsp;·&nbsp; <a href="text-messaging.html">Text messaging</a></footer>
+<footer>MontroAI is a product of ARAZ Venture LLC, a Texas company. © 2026 ARAZ Venture LLC. &nbsp;·&nbsp; <a href="privacy.html">Privacy Policy</a> &nbsp;·&nbsp; <a href="terms.html">Terms of Service</a> &nbsp;·&nbsp; <a href="text-messaging.html">Text messaging</a></footer>
 <script>
 (function () {
   // The publishable key is meant to be public; the database only lets this page send a help request.
@@ -135,7 +135,7 @@
     var topic = f.elements.topic.value;
     var comp = /Mac|iPhone|iPad/.test(navigator.userAgent) ? "mac" : "windows";   // the helper is told which kind of computer
     if (!topic) return show(bad, "Check:", "Please pick what you need help with.");
-    if (!/^\d{6,12}$/.test(v("rd").replace(/[\s-]/g, ""))) return show(bad, "Check:", "Please type the code shown in the Montro-AI Help window (digits only)."), f.elements.rd.focus();
+    if (!/^\d{6,12}$/.test(v("rd").replace(/[\s-]/g, ""))) return show(bad, "Check:", "Please type the code shown in the MontroAI Help window (digits only)."), f.elements.rd.focus();
     if (!/^[0-9 +().-]{7,30}$/.test(v("phone"))) return show(bad, "Check:", "Please type a call back number (digits only)."), f.elements.phone.focus();
     if (!v("name")) return show(bad, "Check:", "Please type your name."), f.elements.name.focus();
     if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v("email"))) return show(bad, "Check:", "Please type a correct email address."), f.elements.email.focus();
@@ -146,7 +146,7 @@
       .then(function (r) { return r.json().catch(function () { return {}; }).then(function (j) { return { ok: r.ok, j: j }; }); })
       .then(function (x) {
         send.disabled = false; send.textContent = "Ask for help";
-        if (x.ok) { show(good, "Sent.", " A helper will connect soon. Keep the Montro-AI Help window open. When a box asks you to Accept, click Accept. You can also call 832-526-0617."); f.reset(); return; }
+        if (x.ok) { show(good, "Sent.", " A helper will connect soon. Keep the MontroAI Help window open. When a box asks you to Accept, click Accept. You can also call 832-526-0617."); f.reset(); return; }
         show(bad, "Not sent.", " " + ((x.j && x.j.message) || "Something went wrong.") + " What you typed is still here.");
       })
       .catch(function () { send.disabled = false; send.textContent = "Ask for help"; show(bad, "Not sent.", " Check your internet, then try again. What you typed is still here. Or call 832-526-0617."); });
