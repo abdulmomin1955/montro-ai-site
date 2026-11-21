@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>MontroAI — Retail &amp; Restaurant Operations Platform</title>
-<meta name="description" content="MontroAI pairs point of sale with real-time insights, inventory, loyalty and multi-location control for convenience stores, grocery, liquor, smoke shops, cafes and restaurants.">
+<title>MontroAI — Back Office for C-Stores and Gas Stations</title>
+<meta name="description" content="MontroAI is the back office for c-stores and gas stations: the day's money, lottery, fuel, bank, invoices and reports in one place. Start free, or try MontroAI Plus free for 30 days.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=DM+Sans:wght@400;500;600;700&display=swap">
 <style>
@@ -133,6 +133,26 @@
     .phone { width:300px; } .toast { left:0; width:260px; }
     .btn { font-size:16px; padding:14px 24px; }
   }
+
+  .plans { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:24px; margin-top:40px; max-width:1040px; }
+  .plan { background:#fff; border:1.5px solid var(--line); border-radius:28px; padding:36px; display:flex; flex-direction:column; }
+  .plan.plus { border:2.5px solid var(--green); box-shadow:0 30px 60px -36px rgba(18,36,28,.45); }
+  .plan .tag { align-self:flex-start; background:var(--gold); color:var(--ink); font-size:13px; font-weight:700; padding:5px 12px; border-radius:999px; margin-bottom:14px; }
+  .plan h3 { margin:0; font-weight:800; font-size:32px; letter-spacing:-.025em; }
+  .plan .price { margin:10px 0 4px; font-family:'Bricolage Grotesque',sans-serif; font-weight:800; font-size:44px; letter-spacing:-.03em; }
+  .plan .price small { font-family:'DM Sans',sans-serif; font-weight:500; font-size:17px; color:var(--muted); letter-spacing:0; }
+  .plan .sub { margin:0 0 22px; font-size:16px; color:var(--muted); }
+  .plan ul { list-style:none; margin:0 0 28px; padding:0; display:flex; flex-direction:column; gap:12px; font-size:16.5px; line-height:1.5; }
+  .plan li { padding-left:30px; position:relative; }
+  .plan li::before { content:"✓"; position:absolute; left:0; top:0; width:22px; height:22px; border-radius:50%; background:var(--mint); color:var(--green); font-weight:800; font-size:13px; display:flex; align-items:center; justify-content:center; }
+  .plan li b { font-weight:700; }
+  .plan .btn { margin-top:auto; text-align:center; }
+  .plan-note { margin:22px 0 0; font-size:15px; color:var(--muted); max-width:1040px; }
+  .grid4 { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:20px; margin-top:40px; }
+  @media (max-width: 1100px) { .grid4 { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+  @media (max-width: 960px) { .plans { grid-template-columns:1fr; } .plan { padding:28px; } }
+  @media (max-width: 620px) { .grid4 { grid-template-columns:1fr; } }
+  @media (max-width: 700px) { .nav-right .old, .nav-right .navhelp { display:none; } .nav { padding:10px 14px; } .logo-name { font-size:22px; } .logo-mark { width:34px; height:34px; font-size:18px; } .nav-right { gap:4px; } .nav-right .btn.small { padding:9px 14px; font-size:14px; } .loginlink { padding:8px 8px; font-size:14px; } .toast { left:6px; } }
 </style>
 </head>
 <body>
@@ -140,70 +160,107 @@
 <div class="nav">
   <a class="logo" href="#top"><div class="logo-mark">M</div><div class="logo-name">Montro<span class="ai">AI</span></div></a>
   <div class="links">
-    <a href="#platform">Platform</a><a href="#why">Why MontroAI</a><a href="#retail">Retail</a><a href="#restaurant">Restaurant</a><a href="demo.html">Live demo</a>
+    <a href="#features">Features</a><a href="#plans">Plans</a><a href="#why">Why MontroAI</a><a href="demo.html">Live demo</a>
   </div>
-  <div class="nav-right"><a class="loginlink" href="https://app.montroai.net">Log in</a><a class="loginlink" href="https://my-new-app-ae1b6.web.app">Old Login</a><a class="btn small ghost" href="help.html">Get Help</a><a class="btn small" href="#contact">Get a demo</a></div>
+  <div class="nav-right"><a class="loginlink" href="https://app.montroai.net">Log in</a><a class="loginlink old" href="https://my-new-app-ae1b6.web.app">Old Login</a><a class="btn small ghost navhelp" href="help.html">Get Help</a><a class="btn small" href="https://app.montroai.net/#trial">Start free trial</a></div>
 </div>
 
 <div id="top" class="hero">
   <div>
-    <div class="eyebrow">For store &amp; restaurant owners</div>
+    <div class="eyebrow">For c-store and gas station owners</div>
     <h1>
-      <span>Run the counter</span>
-      <span class="hl">and the back office</span>
-      <span class="gr">from one screen.</span>
+      <span>Your store's</span>
+      <span class="hl">back office,</span>
+      <span class="gr">done right.</span>
     </h1>
-    <p class="lead">MontroAI pairs point of sale with real-time insights, inventory, loyalty and multi-location control — built for convenience stores, grocery, liquor, smoke shops, cafes and full-service restaurants alike.</p>
+    <p class="lead">MontroAI keeps the day's money, lottery, fuel, bank, invoices and reports for c-stores and gas stations in one place. Every number ties, from the register to the bank.</p>
     <div class="actions">
-      <a class="btn" href="#contact">Get a demo</a>
+      <a class="btn" href="https://app.montroai.net/#trial">Start free trial</a>
       <a class="btn ghost" href="demo.html">Try the live demo</a>
     </div>
-    <div class="checks"><span>One login for every location</span><span>Works on any device</span><span>Try the demo free</span></div>
+    <div class="checks"><span>Free plan, no card</span><span>30 days of MontroAI Plus free</span><span>Phone and computer</span></div>
   </div>
 
   <div class="phone-wrap">
     <div class="phone">
       <div class="screen">
-        <div class="urlbar">montroai.net/app</div>
+        <div class="urlbar">app.montroai.net</div>
         <div class="brandline"><i></i>MontroAI</div>
         <div class="pcard">
-          <span class="chip">3 locations · live</span>
+          <span class="chip">2 stores · today</span>
           <div class="big">$8,412</div>
-          <small>Net sales today</small>
+          <small>Sales today</small>
           <div class="pbars">
-            <div class="r">Beverages<div class="pt"><i style="width:82%"></i></div></div>
-            <div class="r">Hot food<div class="pt"><i style="width:64%"></i></div></div>
-            <div class="r">Tobacco<div class="pt"><i style="width:41%"></i></div></div>
+            <div class="r">Fuel<div class="pt"><i style="width:82%"></i></div></div>
+            <div class="r">Inside sales<div class="pt"><i style="width:64%"></i></div></div>
+            <div class="r">Lottery<div class="pt"><i style="width:41%"></i></div></div>
           </div>
         </div>
-        <div class="phead">2 items to reorder</div>
-        <span class="pbtn">Review &amp; send order</span>
+        <div class="phead">Short / Over: $0.00</div>
+        <span class="pbtn">Save the day</span>
         <div class="pnote">Sample data for illustration</div>
       </div>
     </div>
     <div class="toast">
       <div class="av">M</div>
-      <div><b>MontroAI <em>now</em></b><p>Bottled Water is running low at Main St. Reorder 5 cases?</p></div>
+      <div><b>MontroAI <em>now</em></b><p>The vendor invoice is read: 24 items, $412.80. Check it and save.</p></div>
     </div>
   </div>
 </div>
 
 <div class="strip">
-  <div class="t">Built for owner-operators in</div>
-  <div class="i"><span>Convenience</span><span>Grocery</span><span>Liquor</span><span>Smoke shops</span><span>Fast casual</span><span>Full service</span><span>Cafés &amp; bakeries</span><span>Bars</span></div>
+  <div class="t">Built for c-stores and gas stations</div>
+  <div class="i"><span>One store or many</span><span>Fuel</span><span>Lottery</span><span>Money services</span><span>7 languages</span></div>
 </div>
 
-<div id="platform" class="wrap">
+<div id="features" class="wrap">
   <div class="center">
-    <div class="eyebrow">The platform</div>
-    <h2>One platform, built for how you actually operate.</h2>
-    <p>Switch the view — MontroAI configures itself around your business type.</p>
+    <div class="eyebrow">What you get</div>
+    <h2>Everything your back office does, in one place.</h2>
+    <p>The same words you use at the counter: Opening, Closing, Sold, Pack, Drop, Shift. Nothing new to learn.</p>
   </div>
-  <div class="tabs">
-    <button class="tab on" id="tabRetail" type="button">Retail</button>
-    <button class="tab" id="tabRestaurant" type="button">Restaurant</button>
+  <div class="grid3" id="featureCards" style="margin-top:40px"></div>
+</div>
+
+<div id="plans" class="wrap" style="padding-top:24px">
+  <div class="center">
+    <div class="eyebrow">Plans</div>
+    <h2>Start free. Add AI when you want it.</h2>
+    <p>Each store has its own plan. Change or stop any time.</p>
   </div>
-  <div class="grid3" id="features"></div>
+  <div class="plans">
+    <div class="plan">
+      <h3>Free</h3>
+      <div class="price">$0 <small>for each store</small></div>
+      <p class="sub">The whole back office, by hand.</p>
+      <ul>
+        <li>Daily entry with Short / Over every day</li>
+        <li>Lottery: packs, counts and the weekly settlement</li>
+        <li>Fuel: deliveries, tank readings and the jobber</li>
+        <li>Bank: deposits, checks and reconcile</li>
+        <li>Items, price book, vendors, purchases and vendor invoice files</li>
+        <li>Money services, credit accounts, income and expenses</li>
+        <li>Reports, and your data to export any time</li>
+        <li>The register link, time clock and more than one store</li>
+        <li>Help pages</li>
+      </ul>
+      <a class="btn ghost" href="https://app.montroai.net/#trial">Start free</a>
+    </div>
+    <div class="plan plus">
+      <span class="tag">30 days free</span>
+      <h3>MontroAI Plus</h3>
+      <div class="price">$19 <small>a month for each store</small></div>
+      <p class="sub">Everything in Free, and AI does the typing.</p>
+      <ul>
+        <li><b>AI reads your vendor invoices</b> from a photo, a PDF or the store email, and fills them in. You check and save.</li>
+        <li><b>AI reads expense receipts and fuel papers</b> the same way.</li>
+        <li><b>Ask MontroAI</b> a question in your own words.</li>
+        <li>Phone and remote help from our team</li>
+      </ul>
+      <a class="btn" href="https://app.montroai.net/#trial">Start 30-day free trial</a>
+    </div>
+  </div>
+  <p class="plan-note">No card needed for the free trial. After 30 days the store moves to Free unless you pick MontroAI Plus. Scan data rebates are set up with your scan data company; their fees are separate.</p>
 </div>
 
 <div id="why" class="why">
@@ -211,34 +268,17 @@
     <div class="eyebrow">Why MontroAI</div>
     <h2>Why owners move to MontroAI.</h2>
     <div class="grid3" style="gap:36px">
-      <div><h3>One system, not five</h3><p>POS, inventory, loyalty, fuel, lottery and payroll live in the same place — no exports, no reconciling three logins before you can trust a number.</p></div>
-      <div><h3>Prices update everywhere at once</h3><p>Change a price book or a menu from one screen and every register, kiosk and digital display reflects it in seconds — across every location.</p></div>
-      <div><h3>Answers, not raw exports</h3><p>Insights flags shrink, slow-movers and margin drift as they happen, so you're reacting to today's shift — not last month's spreadsheet.</p></div>
-    </div>
-  </div>
-</div>
-
-<div class="wrap">
-  <div class="two">
-    <div id="retail" class="panel">
-      <div class="eyebrow">For retail</div>
-      <h3>Convenience, grocery, liquor &amp; smoke shop</h3>
-      <p>Manage fuel, lottery, scan-data rebates and shelf-edge pricing alongside everyday POS — with shrink and audit tools built for high-SKU, high-traffic stores.</p>
-      <a class="more" href="demo.html">See it in the live demo →</a>
-    </div>
-    <div id="restaurant" class="panel">
-      <div class="eyebrow">For restaurants</div>
-      <h3>Fast casual, full service, cafés &amp; bars</h3>
-      <p>Kitchen display, table and tips management, recipe costing and online ordering sync — so the floor and the back office finally agree on the numbers.</p>
-      <a class="more" href="demo.html">See it in the live demo →</a>
+      <div><h3>Every number ties</h3><p>The day's money, the lottery, the fuel and the bank agree on every screen. Short / Over is Accounted For minus Collection, every day.</p></div>
+      <div><h3>Works the way you work</h3><p>Your manager enters the day the same way as before, on a phone or the store computer, in English, Spanish, Hindi, Gujarati, Punjabi, Urdu or Portuguese.</p></div>
+      <div><h3>Your data is yours</h3><p>Bring your old days in, and take your data out any time. One login for every store you own.</p></div>
     </div>
   </div>
 </div>
 
 <div id="contact" class="cta">
-  <h2>See MontroAI running your business.</h2>
-  <p>A real walkthrough for your business type — no pressure, no generic script.</p>
-  <a class="btn" href="demo.html">Try the live demo</a>
+  <h2>Try MontroAI in your own store.</h2>
+  <p>30 days of MontroAI Plus, free. Set up your first store in minutes.</p>
+  <a class="btn" href="https://app.montroai.net/#trial">Start free trial</a>
   <p class="helpline">Already a customer or setting up? <a href="help.html">Get remote help</a></p>
 </div>
 
@@ -246,10 +286,10 @@
   <div class="foot">
     <div>
       <div class="logo"><div class="logo-mark">M</div><div class="logo-name">Montro<span class="ai">AI</span></div></div>
-      <p>One back office for the counter, the kitchen and every location in between.</p>
+      <p>The back office for c-stores and gas stations.</p>
     </div>
-    <div class="col"><b>Product</b><a href="#platform">Point of Sale</a><a href="#platform">Insights</a><a href="#platform">Inventory</a><a href="#platform">Loyalty</a></div>
-    <div class="col"><b>Industries</b><a href="#retail">Convenience</a><a href="#retail">Grocery &amp; Liquor</a><a href="#restaurant">Restaurants</a><a href="#restaurant">Cafés &amp; Bars</a></div>
+    <div class="col"><b>Product</b><a href="#features">Daily entry</a><a href="#features">Lottery</a><a href="#features">Fuel</a><a href="#features">Bank and invoices</a></div>
+    <div class="col"><b>Plans</b><a href="#plans">Free</a><a href="#plans">MontroAI Plus</a><a href="https://app.montroai.net/#trial">Start free trial</a></div>
     <div class="col"><b>Explore</b><a href="demo.html">Live demo</a><a href="help.html">Get Remote Help</a><a href="#top">Back to top</a></div>
   </div>
   <div class="copy">MontroAI is made by MontroAI LLC, a Texas company. © 2026 MontroAI LLC. All rights reserved. &nbsp;·&nbsp; <a href="mailto:admin@montroai.net">admin@montroai.net</a> &nbsp;·&nbsp; <a href="privacy.html">Privacy Policy</a> &nbsp;·&nbsp; <a href="terms.html">Terms of Service</a> &nbsp;·&nbsp; <a href="text-messaging.html">Text messaging</a> &nbsp;·&nbsp; <a href="help.html">Contact &amp; Help</a></div>
@@ -257,38 +297,25 @@
 
 <script>
 (function () {
-  var data = {
-    retail: [
-      ["Retail Point of Sale","Fast checkout built for high-volume counters, with barcode, age-verification and fuel/lottery prompts built in."],
-      ["Fuel & Lottery Management","Reconcile fuel sales and lottery settlement automatically instead of by hand at close."],
-      ["Scan Data & Tobacco Loyalty","Capture manufacturer rebate programs directly from register data, with no extra reporting work."],
-      ["Inventory & Price Book","One shared price book keeps every register and shelf tag correct the moment you change it."],
-      ["Multi-Location Management","Compare stores side by side and push pricing, promos and staffing changes to all of them at once."],
-      ["Digital Lottery & Displays","Promote lottery, deals and new items on digital screens that update themselves from the back office."]
-    ],
-    restaurant: [
-      ["Restaurant Point of Sale","Order entry built for speed at the counter, the drive-thru or the table, with modifiers that never slow the line."],
-      ["Kitchen Display System","Orders route straight to the kitchen the moment they're placed — no paper tickets, no missed items."],
-      ["Table & Tips Management","Manage covers, turns and tip pools without a separate spreadsheet at the end of the night."],
-      ["Recipe Costing","Tie every recipe to real ingredient cost, so a menu price change shows its margin impact instantly."],
-      ["Online Ordering Sync","Bring delivery and pickup orders straight into the POS, so nothing gets keyed in twice."],
-      ["Loyalty & Campaigns","Turn first-time guests into regulars with targeted offers tied to what they actually order."]
-    ]
-  };
+  var cards = [
+    ["Daily entry", "The register closing, cash, cards, drops and payouts for each day, with Short / Over worked out for you."],
+    ["Lottery", "Activate packs, count each day, see what sold, and match the weekly settlement."],
+    ["Fuel", "Deliveries, tank readings, fuel prices and the jobber's invoices and payments, in one place."],
+    ["Bank", "Deposits and checks by bank, and a reconcile against the bank statement."],
+    ["Items and price book", "Your items, prices, price groups and promotions, with vendors and purchases."],
+    ["Vendor invoices", "Every invoice and credit kept with its vendor, paid or open, with vendor files brought in."],
+    ["Money services", "Money orders, bill pay, money transfer and the ATM, each with its settlements."],
+    ["Reports", "Sales, profit and every number by day, week or month, for one store or all of them."],
+    ["Register link", "The day's numbers come from the register, so nothing is typed twice."],
+    ["People and time clock", "A PIN clock at the counter, timesheets and pay set up for each person."],
+    ["Head Office", "Every store side by side, and price changes sent to many stores at once."],
+    ["Phone and computer", "The same app on the store computer and your phone, in 7 languages."]
+  ];
   var icon = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1A5C45" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M9 12l2 2 4-4"></path></svg>';
   function esc(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");}
-  var box = document.getElementById("features");
-  var tr = document.getElementById("tabRetail"), te = document.getElementById("tabRestaurant");
-  function show(kind) {
-    box.innerHTML = data[kind].map(function (f) {
-      return '<div class="card"><div class="ico">' + icon + '</div><h3>' + esc(f[0]) + '</h3><p>' + esc(f[1]) + '</p></div>';
-    }).join("");
-    tr.className = "tab" + (kind === "retail" ? " on" : "");
-    te.className = "tab" + (kind === "restaurant" ? " on" : "");
-  }
-  tr.addEventListener("click", function () { show("retail"); });
-  te.addEventListener("click", function () { show("restaurant"); });
-  show("retail");
+  document.getElementById("featureCards").innerHTML = cards.map(function (f) {
+    return '<div class="card"><div class="ico">' + icon + '</div><h3>' + esc(f[0]) + '</h3><p>' + esc(f[1]) + '</p></div>';
+  }).join("");
 })();
 </script>
 </body>

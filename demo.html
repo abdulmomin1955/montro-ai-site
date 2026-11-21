@@ -157,9 +157,9 @@
   <div class="store-picker">
     Viewing location
     <select id="storeSelect">
-      <option>Main St — Convenience</option>
-      <option>Riverside — Full Service</option>
-      <option>Airport Rd — Café</option>
+      <option>Main St — Gas &amp; C-store</option>
+      <option>Highway 6 — Gas Station</option>
+      <option>Airport Rd — C-store</option>
     </select>
   </div>
 </div>
@@ -187,14 +187,14 @@
     { name: "Energy Drink 16oz", cat: "Beverages", stock: 96, par: 60, status: "ok" },
     { name: "Bottled Water 20oz", cat: "Beverages", stock: 7, par: 80, status: "low" },
     { name: "Bagged Ice 7lb", cat: "General", stock: 55, par: 40, status: "ok" },
-    { name: "House Blend Draft", cat: "Bar", stock: 21, par: 25, status: "mid" },
+    { name: "Motor Oil 1qt", cat: "Automotive", stock: 21, par: 25, status: "mid" },
     { name: "Lottery Scratch - $5", cat: "Lottery", stock: 140, par: 100, status: "ok" }
   ];
 
   var team = [
     { name: "Jordan Marsh", role: "Store Manager", shift: "6a – 2p", status: "Clocked in" },
     { name: "Priya Anand", role: "Cashier", shift: "2p – 10p", status: "Scheduled" },
-    { name: "Deshawn Little", role: "Kitchen Lead", shift: "6a – 2p", status: "Clocked in" },
+    { name: "Deshawn Little", role: "Assistant Manager", shift: "6a – 2p", status: "Clocked in" },
     { name: "Casey Nguyen", role: "Cashier", shift: "10a – 6p", status: "On break" }
   ];
 
@@ -210,7 +210,7 @@
     { name: "Scratch Ticket $5", price: 5.00 },
     { name: "Ice, 7lb Bag", price: 3.49 },
     { name: "Cigarettes, Pack", price: 8.75 },
-    { name: "Draft Beer, Pint", price: 5.50 }
+    { name: "Beer, 6-pack", price: 9.99 }
   ];
 
   var cart = []; // {name, price, qty}
@@ -293,7 +293,7 @@
     return (
       '<div class="pos-grid">' +
         '<div>' +
-          '<h2 class="section">Menu</h2>' +
+          '<h2 class="section">Items</h2>' +
           '<div class="item-grid" id="itemGrid">' +
             posItems.map(function (it, idx) {
               return '<button class="item-btn" data-idx="' + idx + '">' +
@@ -303,13 +303,13 @@
           '</div>' +
         '</div>' +
         '<div class="card" style="height:fit-content;">' +
-          '<h2 class="section">Current Order</h2>' +
+          '<h2 class="section">Current Sale</h2>' +
           '<div id="cartList"></div>' +
           '<div style="display:flex;justify-content:space-between;padding-top:14px;margin-top:6px;border-top:1.5px solid var(--line);font-weight:600;">' +
             '<span>Total</span><span id="cartTotal" class="display" style="font-size:18px;">$0.00</span>' +
           '</div>' +
           '<button class="primary" id="chargeBtn" style="width:100%;margin-top:14px;">Charge</button>' +
-          '<button class="ghost" id="clearBtn" style="width:100%;margin-top:8px;">Clear Order</button>' +
+          '<button class="ghost" id="clearBtn" style="width:100%;margin-top:8px;">Clear Sale</button>' +
         '</div>' +
       '</div>'
     );
@@ -320,7 +320,7 @@
     var totalEl = document.getElementById("cartTotal");
     if (!list) return;
     if (cart.length === 0) {
-      list.innerHTML = '<div class="muted" style="font-size:13.5px;padding:10px 0;">No items yet — tap the menu to add.</div>';
+      list.innerHTML = '<div class="muted" style="font-size:13.5px;padding:10px 0;">No items yet — tap an item to add.</div>';
     } else {
       list.innerHTML = cart.map(function (c, idx) {
         return '<div class="cart-row"><div>' + esc(c.name) + '<div class="muted" style="font-size:12px;">' + money(c.price) + ' each</div></div>' +
@@ -364,8 +364,8 @@
     document.getElementById("chargeBtn").addEventListener("click", function () {
       if (cart.length === 0) return;
       var total = cart.reduce(function (s, c) { return s + c.price * c.qty; }, 0);
-      alert("Demo only — would charge " + money(total) + " and print a receipt.");
       cart = []; renderCart();
+      document.getElementById("cartList").innerHTML = '<div class="muted" style="font-size:13.5px;padding:10px 0;" role="status">Demo only: this would charge ' + money(total) + ' and print a receipt.</div>';
     });
   }
 
